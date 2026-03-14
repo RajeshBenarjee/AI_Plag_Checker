@@ -231,6 +231,24 @@
       "plagiarized_sentences": 0,
       "trust_verdict": "ORIGINAL",
       "trust_score": 31.0
+    },
+    {
+      "timestamp": "2026-03-14T12:27:14.116820",
+      "filename": "pasted_text",
+      "percentage": 100.0,
+      "total_sentences": 5,
+      "plagiarized_sentences": 5,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 100
+    },
+    {
+      "timestamp": "2026-03-14T12:44:07.103087",
+      "filename": "pasted_text",
+      "percentage": 100.0,
+      "total_sentences": 5,
+      "plagiarized_sentences": 5,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 100
     }
   ],
   "rajesh": [
@@ -242,6 +260,26 @@
       "plagiarized_sentences": 0,
       "trust_verdict": "SUSPICIOUS",
       "trust_score": 39.0
+    },
+    {
+      "timestamp": "2026-03-14T12:47:19.582198",
+      "filename": "plagiarism_report (1).pdf",
+      "percentage": 0.0,
+      "total_sentences": 2,
+      "plagiarized_sentences": 0,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 5.0
+    }
+  ],
+  "ben123": [
+    {
+      "timestamp": "2026-03-14T12:07:59.190994",
+      "filename": "pasted_text",
+      "percentage": 100.0,
+      "total_sentences": 3,
+      "plagiarized_sentences": 3,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 100
     }
   ]
 }

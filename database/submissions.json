@@ -249,6 +249,15 @@
       "plagiarized_sentences": 5,
       "trust_verdict": "CONFIRMED PLAGIARISM",
       "trust_score": 100
+    },
+    {
+      "timestamp": "2026-03-14T13:48:18.309266",
+      "filename": "pasted_text",
+      "percentage": 100.0,
+      "total_sentences": 5,
+      "plagiarized_sentences": 5,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 100
     }
   ],
   "rajesh": [

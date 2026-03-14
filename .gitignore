@@ -1,0 +1,24 @@
+# Don't push large files
+data/wikisent2.txt
+data/multilingual/
+database/faiss_index_english.bin
+database/faiss_index_multilingual.bin
+database/sentences_english.pkl
+database/sentences_multilingual.pkl
+
+# Keep these (small)
+database/student_index.bin
+database/student_sentences.pkl
+data/dataset.txt"data/multi_sentences.csv" 
+"telugu_dataset.txt" 
+
+
+# Add these lines to .gitignore
+data/multi_sentences.csv
+telugu_dataset.txt
+
+# Common extras to ignore
+__pycache__/
+*.pyc
+.env
+venv/

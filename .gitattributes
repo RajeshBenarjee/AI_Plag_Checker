@@ -1,0 +1,2 @@
+data/multi_sentences.csv filter=lfs diff=lfs merge=lfs -text
+telugu_dataset.txt filter=lfs diff=lfs merge=lfs -text

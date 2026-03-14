@@ -1,0 +1,247 @@
+{
+  "ravi_kumar": [
+    {
+      "timestamp": "2025-01-15T10:30:00",
+      "filename": "assignment1_ml_intro.pdf",
+      "percentage": 18.5,
+      "total_sentences": 42,
+      "plagiarized_sentences": 8,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 18.5
+    },
+    {
+      "timestamp": "2025-01-22T11:00:00",
+      "filename": "assignment2_neural_networks.pdf",
+      "percentage": 34.2,
+      "total_sentences": 38,
+      "plagiarized_sentences": 13,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 39.2
+    },
+    {
+      "timestamp": "2025-01-29T09:45:00",
+      "filename": "assignment3_deep_learning.pdf",
+      "percentage": 62.8,
+      "total_sentences": 45,
+      "plagiarized_sentences": 28,
+      "trust_verdict": "LIKELY COPIED",
+      "trust_score": 77.8
+    },
+    {
+      "timestamp": "2025-02-05T10:15:00",
+      "filename": "assignment4_nlp_project.pdf",
+      "percentage": 81.4,
+      "total_sentences": 50,
+      "plagiarized_sentences": 41,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 92.4
+    }
+  ],
+  "priya_sharma": [
+    {
+      "timestamp": "2025-01-15T14:00:00",
+      "filename": "assignment1_data_science.pdf",
+      "percentage": 12.3,
+      "total_sentences": 40,
+      "plagiarized_sentences": 5,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 12.3
+    },
+    {
+      "timestamp": "2025-01-22T15:30:00",
+      "filename": "assignment2_python_basics.pdf",
+      "percentage": 22.7,
+      "total_sentences": 44,
+      "plagiarized_sentences": 10,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 27.7
+    },
+    {
+      "timestamp": "2025-02-01T10:00:00",
+      "filename": "assignment3_statistics.pdf",
+      "percentage": 19.1,
+      "total_sentences": 47,
+      "plagiarized_sentences": 9,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 19.1
+    }
+  ],
+  "arjun_reddy": [
+    {
+      "timestamp": "2025-01-16T09:00:00",
+      "filename": "assignment1_algorithms.pdf",
+      "percentage": 45.6,
+      "total_sentences": 36,
+      "plagiarized_sentences": 16,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 50.6
+    },
+    {
+      "timestamp": "2025-01-23T09:30:00",
+      "filename": "assignment2_data_structures.pdf",
+      "percentage": 71.3,
+      "total_sentences": 39,
+      "plagiarized_sentences": 28,
+      "trust_verdict": "LIKELY COPIED",
+      "trust_score": 81.3
+    },
+    {
+      "timestamp": "2025-02-02T11:00:00",
+      "filename": "assignment3_os_concepts.pdf",
+      "percentage": 78.9,
+      "total_sentences": 43,
+      "plagiarized_sentences": 34,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 88.9
+    }
+  ],
+  "sneha_patel": [
+    {
+      "timestamp": "2025-01-17T10:00:00",
+      "filename": "assignment1_ai_basics.pdf",
+      "percentage": 8.4,
+      "total_sentences": 48,
+      "plagiarized_sentences": 4,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 8.4
+    },
+    {
+      "timestamp": "2025-01-25T11:30:00",
+      "filename": "assignment2_computer_vision.pdf",
+      "percentage": 15.2,
+      "total_sentences": 52,
+      "plagiarized_sentences": 8,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 15.2
+    }
+  ],
+  "kiran_babu": [
+    {
+      "timestamp": "2025-01-18T08:30:00",
+      "filename": "assignment1_dbms.pdf",
+      "percentage": 55.7,
+      "total_sentences": 35,
+      "plagiarized_sentences": 20,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 60.7
+    },
+    {
+      "timestamp": "2025-01-25T09:00:00",
+      "filename": "assignment2_sql_queries.pdf",
+      "percentage": 67.4,
+      "total_sentences": 41,
+      "plagiarized_sentences": 28,
+      "trust_verdict": "LIKELY COPIED",
+      "trust_score": 72.4
+    },
+    {
+      "timestamp": "2025-02-03T10:30:00",
+      "filename": "assignment3_normalization.pdf",
+      "percentage": 83.2,
+      "total_sentences": 44,
+      "plagiarized_sentences": 37,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 93.2
+    }
+  ],
+  "meera_nair": [
+    {
+      "timestamp": "2025-01-19T13:00:00",
+      "filename": "assignment1_networks.pdf",
+      "percentage": 21.8,
+      "total_sentences": 46,
+      "plagiarized_sentences": 10,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 21.8
+    },
+    {
+      "timestamp": "2025-01-28T14:00:00",
+      "filename": "assignment2_security.pdf",
+      "percentage": 28.5,
+      "total_sentences": 40,
+      "plagiarized_sentences": 11,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 28.5
+    }
+  ],
+  "sai_krishna": [
+    {
+      "timestamp": "2025-01-20T10:00:00",
+      "filename": "assignment1_cloud_computing.pdf",
+      "percentage": 38.9,
+      "total_sentences": 37,
+      "plagiarized_sentences": 14,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 43.9
+    },
+    {
+      "timestamp": "2025-01-27T11:00:00",
+      "filename": "assignment2_devops.pdf",
+      "percentage": 57.3,
+      "total_sentences": 42,
+      "plagiarized_sentences": 24,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 62.3
+    },
+    {
+      "timestamp": "2025-02-04T09:00:00",
+      "filename": "assignment3_microservices.pdf",
+      "percentage": 74.6,
+      "total_sentences": 48,
+      "plagiarized_sentences": 36,
+      "trust_verdict": "LIKELY COPIED",
+      "trust_score": 84.6
+    }
+  ],
+  "divya_lakshmi": [
+    {
+      "timestamp": "2025-01-21T09:30:00",
+      "filename": "assignment1_software_eng.pdf",
+      "percentage": 11.2,
+      "total_sentences": 44,
+      "plagiarized_sentences": 5,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 11.2
+    },
+    {
+      "timestamp": "2025-01-30T10:00:00",
+      "filename": "assignment2_agile.pdf",
+      "percentage": 17.8,
+      "total_sentences": 38,
+      "plagiarized_sentences": 7,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 17.8
+    }
+  ],
+  "admin": [
+    {
+      "timestamp": "2026-03-14T10:19:25.914595",
+      "filename": "pasted_text",
+      "percentage": 100.0,
+      "total_sentences": 2,
+      "plagiarized_sentences": 2,
+      "trust_verdict": "CONFIRMED PLAGIARISM",
+      "trust_score": 100
+    },
+    {
+      "timestamp": "2026-03-14T10:24:25.928727",
+      "filename": "pasted_text",
+      "percentage": 0.0,
+      "total_sentences": 3,
+      "plagiarized_sentences": 0,
+      "trust_verdict": "ORIGINAL",
+      "trust_score": 31.0
+    }
+  ],
+  "rajesh": [
+    {
+      "timestamp": "2026-03-14T10:27:05.233064",
+      "filename": "pasted_text",
+      "percentage": 0.0,
+      "total_sentences": 3,
+      "plagiarized_sentences": 0,
+      "trust_verdict": "SUSPICIOUS",
+      "trust_score": 39.0
+    }
+  ]
+}

@@ -21,4 +21,4 @@ telugu_dataset.txt
 __pycache__/
 *.pyc
 .env
-venv/
+venv/database/faiss_index.bin 

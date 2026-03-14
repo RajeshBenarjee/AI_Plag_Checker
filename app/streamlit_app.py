@@ -33,9 +33,7 @@ from model.paraphrase_classifier import batch_classify
 load_dotenv()
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 
-# ================================================================
 # PAGE CONFIG
-# ================================================================
 st.set_page_config(
     page_title="AI Plagiarism Detector",
     page_icon="🔍",
@@ -43,19 +41,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-
-# ================================================================
 # SESSION STATE INIT
-# ================================================================
 if "logged_in"  not in st.session_state: st.session_state.logged_in  = False
 if "username"   not in st.session_state: st.session_state.username   = ""
 if "role"       not in st.session_state: st.session_state.role       = ""
 if "auth_page"  not in st.session_state: st.session_state.auth_page  = "login"
 
 
-# ================================================================
 # ── AUTH WALL ── show login/register before anything else
-# ================================================================
 if not st.session_state.logged_in:
 
     st.title("🔍 AI Plagiarism Detection System")
@@ -107,12 +100,9 @@ if not st.session_state.logged_in:
                 else:
                     st.warning("Please fill all fields.")
 
-    st.stop()   # ← nothing below renders until logged in
+    st.stop()  
 
-
-# ================================================================
-# ── SIDEBAR (shown after login) ──
-# ================================================================
+#  SIDEBAR (shown after login)
 with st.sidebar:
     st.markdown(f"### 👤 {st.session_state.username}")
     st.markdown(f"Role: `{st.session_state.role}`")
@@ -149,9 +139,7 @@ with st.sidebar:
 model_type = "multilingual" if "Multilingual" in lang_mode else "english"
 
 
-# ================================================================
 # LOAD ENGINES (cached)
-# ================================================================
 @st.cache_resource
 def load_engines(mt):
     engine           = PlagiarismEngine(model_type=mt)
@@ -164,9 +152,7 @@ def load_engines(mt):
 engine, internet_detector, student_detector, batch_processor, style_fp = load_engines(model_type)
 
 
-# ================================================================
-# ── TEACHER: DASHBOARD ──
-# ================================================================
+#  TEACHER: DASHBOARD 
 if st.session_state.role == "teacher" and page == "🏠 Dashboard":
 
     st.title("🏠 Teacher Dashboard")
@@ -253,9 +239,7 @@ if st.session_state.role == "teacher" and page == "🏠 Dashboard":
         st.dataframe(pd.DataFrame(all_users), use_container_width=True)
 
 
-# ================================================================
-# ── TEACHER: ALL SUBMISSIONS ──
-# ================================================================
+#  TEACHER: ALL SUBMISSIONS   
 elif st.session_state.role == "teacher" and page == "📋 All Submissions":
 
     st.title("📋 All Student Submissions")
@@ -279,9 +263,7 @@ elif st.session_state.role == "teacher" and page == "📋 All Submissions":
             st.dataframe(df, use_container_width=True)
 
 
-# ================================================================
-# ── STUDENT: MY HISTORY ──
-# ================================================================
+#  STUDENT: MY HISTORY 
 elif page == "📈 My History":
 
     st.title(f"📈 My Submission History — {st.session_state.username}")
@@ -309,7 +291,7 @@ elif page == "📈 My History":
                             annotation_text="Suspicious")
         st.plotly_chart(fig_hist, use_container_width=True)
 
-        # ── Trust score timeline ──
+        #  Trust score timeline 
         st.subheader("🛡️ Trust Score Over Time")
 
         fig_trust = px.line(
@@ -321,14 +303,12 @@ elif page == "📈 My History":
         )
         st.plotly_chart(fig_trust, use_container_width=True)
 
-        # ── Raw table ──
+        #  Raw table 
         st.subheader("📋 Submission Log")
         st.dataframe(df_hist, use_container_width=True)
 
 
-# ================================================================
-# ── TEACHER: BATCH UPLOAD ──
-# ================================================================
+#  TEACHER: BATCH UPLOAD 
 elif (st.session_state.role == "teacher" and page == "📚 Batch Upload"):
 
     st.title("📚 Batch Upload — Full Class Analysis")
@@ -392,9 +372,7 @@ elif (st.session_state.role == "teacher" and page == "📚 Batch Upload"):
             st.warning(f"**{fnA}** ↔ **{fnB}** — Similarity: `{score:.2%}`")
 
 
-# ================================================================
-# ── TEACHER: COMPARE STUDENTS ──
-# ================================================================
+#  TEACHER: COMPARE STUDENTS
 elif (st.session_state.role == "teacher" and page == "👥 Compare Students"):
 
     st.title("👥 Compare Two Student Assignments")
@@ -451,9 +429,7 @@ elif (st.session_state.role == "teacher" and page == "👥 Compare Students"):
         st.markdown(diff_html, unsafe_allow_html=True)
 
 
-# ================================================================
-# ── SINGLE DOCUMENT CHECK (both teacher + student) ──
-# ================================================================
+#  SINGLE DOCUMENT CHECK (both teacher + student) 
 elif page in ("📝 Check Single", "📝 Check Assignment"):
 
     username = st.session_state.username
@@ -486,19 +462,19 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
 
     if st.button("🚀 Check Plagiarism") and text:
 
-        # ── Run detection ──
+        #  Run detection 
         with st.spinner("Running AI plagiarism detection..."):
             results, percentage, total, plagiarized, cited_sentences = engine.detect(text)
 
         st.success("✅ Analysis Completed")
 
-        # ── Cited sentences ──
+        #  Cited sentences 
         if cited_sentences:
             with st.expander(f"📚 {len(cited_sentences)} Cited Sentences Excluded"):
                 for s in cited_sentences:
                     st.write("✅", s)
 
-        # ── Internet check ──
+        #  Internet check 
         internet_hits = []
         with st.spinner("🌐 Scanning internet..."):
             for r in results:
@@ -513,13 +489,13 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
                         "web_source": web_source
                     })
 
-        # ── Cross student ──
+        #  Cross student 
         student_results = student_detector.detect_similarity(text)
 
-        # ── Trust score ──
+        #  Trust score 
         trust = compute_trust_score(percentage, results, internet_hits, student_results)
 
-        # ── Trust Banner ──
+        #  Trust Banner 
         st.markdown(
             f"""
             <div style='background:{trust["color"]};padding:20px;border-radius:10px;
@@ -541,7 +517,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
         t3.metric("Student Boost",    f"+{b['student_boost']}")
         t4.metric("Confidence Boost", f"+{b['confidence_boost']}")
 
-        # ── Gauge ──
+        #  Gauge 
         fig_gauge = go.Figure(go.Indicator(
             mode="gauge+number",
             value=percentage,
@@ -563,7 +539,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
         m1.metric("Total Sentences",   total)
         m2.metric("Flagged Sentences", plagiarized)
 
-        # ── Section Heatmap ──
+        #  Section Heatmap 
         st.subheader("🗺️ Plagiarism by Document Section")
         fig_section = build_section_heatmap(results)
         st.plotly_chart(fig_section, use_container_width=True)
@@ -571,7 +547,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
         fig_timeline = build_sentence_timeline(results)
         st.plotly_chart(fig_timeline, use_container_width=True)
 
-        # ── Highlighted document ──
+        #  Highlighted document 
         if highlight:
             st.subheader("🖍️ Highlighted Document")
             st.caption("🔴 Copied  🟠 Paraphrased  🟡 Suspicious  🟢 Original")
@@ -586,7 +562,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
                          f"border-radius:3px;margin:2px;display:inline;'>{s}</span> ")
             st.markdown(html, unsafe_allow_html=True)
 
-        # ── Section-wise breakdown ──
+        #  Section-wise breakdown 
         if section_view:
             st.subheader("📑 Section-wise Analysis")
             n = len(results)
@@ -600,7 +576,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
                 pct = (flagged/len(sresults)*100) if sresults else 0
                 st.markdown(f"**{sname}** — {flagged}/{len(sresults)} flagged ({pct:.1f}%)")
 
-        # ── Paraphrase classifier ──
+        #  Paraphrase classifier 
         st.subheader("🔄 Paraphrase Analysis")
         st.caption("Cross-encoder model checks if flagged sentences are smart rewrites.")
 
@@ -631,7 +607,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
         else:
             st.success("✅ No paraphrase candidates found.")
 
-        # ── Sentence analysis cards ──
+        #  Sentence analysis cards 
         st.subheader("🔎 Sentence Analysis")
 
         filtered = results
@@ -656,7 +632,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
                 else:                   st.success("🟢 Clean")
                 st.divider()
 
-        # ── Internet results ──
+        #  Internet results 
         st.subheader("🌐 Internet Source Matches")
         if internet_hits:
             for hit in internet_hits:
@@ -678,7 +654,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
         else:
             st.success("✅ No significant internet matches found.")
 
-        # ── Cross student ──
+        #  Cross student 
         st.subheader("👥 Cross-Student Plagiarism")
         if student_results:
             for r in student_results:
@@ -691,7 +667,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
 
         student_detector.add_submission(text)
 
-        # ── Anomaly detection ──
+        #  Anomaly detection 
         st.subheader("🚨 Anomaly Detection")
         history = get_student_history(username)
 
@@ -745,7 +721,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
             d2.metric("Body vs Conclusion",   d.get("body_vs_conclusion",0))
             d3.metric("Intro vs Conclusion",  d.get("intro_vs_conclusion",0))
 
-        # ── Save submission ──
+        #  Save submission 
         save_submission(
             username     = username,
             filename     = filename,
@@ -756,7 +732,7 @@ elif page in ("📝 Check Single", "📝 Check Assignment"):
             trust_score  = trust["score"]
         )
 
-        # ── PDF Report ──
+        #  PDF Report 
         st.subheader("📥 Download Report")
         pdf_buffer = generate_pdf_report(results, percentage, total, plagiarized)
         st.download_button(

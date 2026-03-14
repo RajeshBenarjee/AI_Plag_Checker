@@ -64,5 +64,11 @@
     "role": "student",
     "created_at": "2026-03-14T10:26:05.483580",
     "submission_count": 0
+  },
+  "ben123": {
+    "password_hash": "e3a4933558fed7f68e547b30fc523f6f263b841da815eb2c6a88bfd4c8d1a57d",
+    "role": "teacher",
+    "created_at": "2026-03-14T12:04:30.994778",
+    "submission_count": 0
   }
 }

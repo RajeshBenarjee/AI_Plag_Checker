@@ -17,7 +17,7 @@
 - Originality Checker
 - Machine Learning
 
----
+--
 
 ## Project Workflow
 
